@@ -14,7 +14,6 @@ Welcome to **NotesNest**, your personal sticky notes application designed to hel
 - [Usage](#usage)
 - [Unit Testing](#unit-testing)
 - [Project Structure](#project-structure)
-- [Acknowledgements](#acknowledgements)
 
 ## Project Overview
 
@@ -116,15 +115,8 @@ python manage.py test
 - **templates/**: Contains HTML templates for different pages.
 - **static/**: Stores static files like CSS.
 
-## Acknowledgements
-
-- **Django**: For providing the robust web framework.
-- **Bootstrap**: For the responsive front-end design.
-- **Python**: For being the backbone of the application.
-
 Thank you for checking out **NotesNest**! Enjoy managing your notes efficiently with this simple and effective application.
 
 ---
 
-Feel free to replace `"https://github.com/yourusername/notesnest.git"` with the actual URL of your GitHub repository. This README provides a thorough guide for anyone to understand, set up, and use your NotesNest application.
 
