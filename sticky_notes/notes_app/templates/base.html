@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}NoteNest - Your Note-taking Companion{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <!-- If user is logged in go to notes hub else go to index page-->
+                    <a href="{% if user.is_authenticated %}{% url 'notes_hub' %}{% else %}{% url 'index' %}{% endif %}" class="text-decoration-none">
+                        <h1 class="text-primary">NoteNest</h1>
+                    </a>
+                </div>
+                <div class="col">
+                    <!-- Navigation Links -->
+                    <nav class="navbar navbar-light justify-content-end">
+                        <ul class="nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'about' %}">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Content Section -->
+    <section class="bg-white py-5 flex-grow-1" id="content">
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-light text-dark py-4">
+        <div class="container">
+            <p class="mb-0 text-center">© 2024 NoteNest. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

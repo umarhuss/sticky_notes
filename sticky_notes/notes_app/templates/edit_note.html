@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Edit Note</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-primary text-center mb-4">Edit Note</h1>
+        <div class="form-container">
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="id_title" class="form-label">Title</label>
+                    <!-- Fill title with clicked note title information -->
+                    <input type="text" id="id_title" name="title" class="form-control" placeholder="Enter note title" value="{{ form.title.value }}">
+                </div>
+                <div class="form-group">
+                    <label for="id_content" class="form-label">Content</label>
+                    <!-- Fill title with clicked note content  -->
+                    <textarea id="id_content" name="content" class="form-control" rows="5" placeholder="Enter note content">{{ form.content.value }}</textarea>
+                </div>
+                <div class="button-container">
+                    <!-- Back button to notes hub -->
+                    <a href="{% url 'notes_hub' %}" class="back-link">
+                        <i class="fa-solid fa-arrow-left mr-1"></i> Back
+                    </a>
+                    <!-- Save button -->
+                    <button type="submit" class="btn btn-success save-button">
+                        Save <i class="fa-solid fa-circle-check ml-1"></i>
+                    </button>
+                    <!-- Delete button -->
+                    <a href="{% url 'delete_note' note.id %}" class="btn btn-danger">
+                        <i class="fa-solid fa-trash mr-1"></i> Delete
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

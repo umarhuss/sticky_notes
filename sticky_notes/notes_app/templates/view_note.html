@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>View Note</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <!-- Fill each element with the details of the clicked in note -->
+                        <h1 class="card-title">{{ note.title }}</h1>
+                        <p class="card-text">{{ note.content }}</p>
+                        <p class="card-text"><small class="text-muted">{{ note.created }}</small></p>
+                        <div class="note-actions">
+                            <!-- Back,edit and delete buttons-->
+                            <a href="{% url 'notes_hub' %}" class="btn btn-secondary"><i class="fa-solid fa-arrow-left"></i> Back</a>
+                            <a href="{% url 'edit_note' note.id %}" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
+                            <a href="{% url 'delete_note' note.id %}" class="btn btn-danger"><i class="fa-solid fa-trash"></i> Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

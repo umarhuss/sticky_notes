@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}NoteNest - Your Note-taking Companion{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-6">
+        <!-- Heading -->
+        <h2 class="text-primary mb-4">Welcome to NoteNest</h2>
+        <!-- Welcome Message -->
+        <p class="lead mb-4">Your Ultimate Note-Taking Companion</p>
+        <!-- Paragraph -->
+        <p class="mb-4">Welcome to NoteNest, your go-to destination for effortless note-taking on the go. Organizing and accessing your notes is now simpler than ever. Whether you're jotting down quick ideas or planning your next big project, NoteNest is here to keep your thoughts in order, anytime, anywhere.</p>
+        <!-- Sign-in and Register Buttons -->
+        <div class="mt-4">
+            <a href="{% url 'login' %}" class="btn btn-primary btn-gradient mr-2">Sign in</a>
+            <a href="{% url 'register_user' %}" class="btn btn-secondary btn-gradient">Register</a>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <!-- Image -->
+        {% load static %}
+        <img src="{% static 'images/notes.jpg' %}" alt="Notes" class="img-fluid">
+    </div>
+</div>
+{% endblock %}

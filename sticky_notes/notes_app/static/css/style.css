@@ -1,0 +1,202 @@
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Flex container to make footer stick to the bottom */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+#content {
+    flex-grow: 1;
+}
+
+/* Footer styles */
+footer {
+    background-color: #343a40; /* Bootstrap dark background color */
+    color: #fff; /* Bootstrap light text color */
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+footer p {
+    margin-bottom: 0;
+}
+
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+footer ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer ul li a:hover {
+    color: #ccc; 
+}
+
+/* Increase spacing between icons */
+.note-card .edit-note,
+.note-card .delete-note {
+    margin-right: 1rem;
+    font-size: 1.2rem; 
+}
+
+/* Truncate text if too long */
+.note-card .card-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+    max-width: 100%;
+}
+
+/* Hover effect on the card */
+.note-card {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.note-card:hover {
+    transform: scale(1.05); /* Slightly enlarge */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+/* Custom styles specific to this page */
+.form-container {
+    max-width: 600px; 
+    margin: auto;
+    padding: 20px;
+    background-color: #f8f9fa; 
+    border-radius: 8px; 
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.button-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.back-link {
+    color: #007bff; 
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.save-button {
+    background-color: #28a745;
+    border-color: #28a745; 
+    color: #fff; 
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+.save-button:hover {
+    background-color: #218838;
+    border-color: #1e7e34; 
+}
+
+/* form labels to align them at the top */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    display: block; /* Ensure the label is on its own line */
+}
+
+.back-link:hover {
+    text-decoration: none; /* Remove the underline on hover */
+    color: #0056b3;
+}
+
+/* Custom styles for the login page */
+.login-page .form-container {
+    max-width: 400px;
+    padding: 30px;
+    background-color: #f8f9fa; 
+    border-radius: 8px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-page h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.login-page form .btn {
+    min-width: 100px;
+}
+
+/* Additional styles to avoid impacting other pages */
+body.login-page {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main.flex-grow-1 {
+    flex-grow: 1;
+}
+
+.container {
+    flex-grow: 1;
+}
+
+view-note-container {
+    max-width: 800px;
+    margin: auto; 
+    padding: 20px;
+    background-color: #fff; 
+    border: 1px solid #ccc; 
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    margin-top: 20px; 
+}
+
+.view-note-container h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.view-note-container p {
+    line-height: 1.6;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.view-note-container .note-actions {
+    margin-top: 20px;
+}
+
+.view-note-container .note-actions a {
+    color: #007bff;
+    text-decoration: none;
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.view-note-container .note-actions a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
